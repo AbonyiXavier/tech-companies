@@ -33,23 +33,37 @@ export default class companyController {
       console.log(error);
     }
   }
+  static async getSingleCompany(req, res) {
+    try {
+      const { id } = req.params;
+      const args = [id];
+      const { rows } = await db.Query(Queries.getSingleCompanies, args);
+      return res.status(200).json({
+        message: "success",
+        message: "View company",
+        data: rows,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   static async updateCompany(req, res) {
     try {
       const { id } = req.params;
       const { name, location, founder, employees, website } = req.body;
-      const args = [name, location, founder, employees, website];
-      const data = [id];
-      const { rowCount } = await db.Query(Queries.updateCompanies, args, data);
+      const args = [name, location, founder, employees, website, id];
+      const { rowCount } = await db.Query(Queries.updateCompanies, args);
       if (rowCount === 1) {
         return res.status(200).json({
           status: "success",
           message: "Company updated successfully",
+          data: rowCount,
         });
       } else {
         return res.status(400).json({
           status: "error",
-          message: "could not update company.. oops! not found",
+          message: "oops! company not found",
         });
       }
     } catch (error) {
@@ -70,7 +84,7 @@ export default class companyController {
       } else {
         return res.status(400).json({
           status: "error",
-          message: "could not delete company.. oops! not found",
+          message: "oops! company not found",
         });
       }
     } catch (error) {
