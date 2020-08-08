@@ -1,4 +1,4 @@
-import pool from '../database/config';
+import pool from "../database/config";
 export default class DbHelpers {
   static async Query(query, args) {
     const client = await pool.connect();
