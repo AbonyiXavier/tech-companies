@@ -6,6 +6,7 @@ export default class companyController {
     try {
       const { name, location, founder, employees, website } = req.body;
       const args = [name, location, founder, employees, website];
+
       console.log("xavier", args);
       const { rows } = await db.Query(Queries.createCompany, args);
       console.log("salang", rows);
@@ -61,7 +62,7 @@ export default class companyController {
           data: rowCount,
         });
       } else {
-        return res.status(400).json({
+        return res.status(404).json({
           status: "error",
           message: "oops! company not found",
         });
@@ -82,7 +83,7 @@ export default class companyController {
           message: "Company deleted successfully",
         });
       } else {
-        return res.status(400).json({
+        return res.status(404).json({
           status: "error",
           message: "oops! company not found",
         });
