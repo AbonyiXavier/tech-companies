@@ -56,7 +56,7 @@ describe("Test for company endpoints", () => {
 
   describe("Delete Company Test", async () => {
     it("should delete all company succesfully", async () => {
-      const res = await chai.request(server).delete(`${url}/company/6`);
+      const res = await chai.request(server).delete(`${url}/company/3`);
       expect(res.status).to.be.equal(200);
       expect(res.body).to.have.property("message");
     });

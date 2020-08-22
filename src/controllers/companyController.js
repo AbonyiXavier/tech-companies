@@ -18,7 +18,9 @@ export default class companyController {
         });
       }
     } catch (error) {
-      console.log(error);
+      res.status(500).json({
+        message: error.message,
+      });
     }
   }
 
@@ -26,12 +28,14 @@ export default class companyController {
     try {
       const { rows } = await db.Query(Queries.getAllCompanies);
       return res.status(200).json({
-        message: "success",
+        status: "success",
         message: "View all companies",
         data: rows,
       });
     } catch (error) {
-      console.log(error);
+      res.status(500).json({
+        message: error.message,
+      });
     }
   }
   static async getSingleCompany(req, res) {
@@ -40,12 +44,14 @@ export default class companyController {
       const args = [id];
       const { rows } = await db.Query(Queries.getSingleCompanies, args);
       return res.status(200).json({
-        message: "success",
+        status: "success",
         message: "View company",
         data: rows,
       });
     } catch (error) {
-      console.log(error);
+      res.status(500).json({
+        message: error.message,
+      });
     }
   }
 
@@ -68,7 +74,9 @@ export default class companyController {
         });
       }
     } catch (error) {
-      console.log(error);
+      res.status(500).json({
+        message: error.message,
+      });
     }
   }
 
@@ -89,7 +97,9 @@ export default class companyController {
         });
       }
     } catch (error) {
-      console.log(error);
+      res.status(500).json({
+        message: error.message,
+      });
     }
   }
 }
