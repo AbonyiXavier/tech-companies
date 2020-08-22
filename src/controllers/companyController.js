@@ -6,15 +6,17 @@ export default class companyController {
     try {
       const { name, location, founder, employees, website } = req.body;
       const args = [name, location, founder, employees, website];
-
-      console.log("xavier", args);
       const { rows } = await db.Query(Queries.createCompany, args);
-      console.log("salang", rows);
       if (rows) {
         return res.status(201).json({
           status: "success",
           message: "comapny added successfully",
           data: rows,
+        });
+      } else {
+        return res.status(400).json({
+          status: "error",
+          message: "an error occurred while adding company",
         });
       }
     } catch (error) {
