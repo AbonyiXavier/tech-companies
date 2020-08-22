@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export default class Queries {
   static get createCompany() {
     return `INSERT INTO companies (name, location, founder, employees, website)
@@ -23,3 +24,4 @@ export default class Queries {
      id = $1`;
   }
 }
+/*eslint-enable*/

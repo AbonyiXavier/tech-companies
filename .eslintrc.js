@@ -8,7 +8,7 @@ module.exports = {
     "no-unused-vars": 0,
     "max-len": 0,
     "linebreak-style": 0,
-    quotes: ["error", "double"],
+    // quotes: ["error", "double"],
   },
   env: {
     browser: true,
