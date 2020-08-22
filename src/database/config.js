@@ -2,13 +2,13 @@ import pg from "pg";
 import dotenv from "dotenv";
 dotenv.config();
 const { Pool } = pg;
-let connectionString = process.env.DATABASE;
+let connectionString = process.env.TEST_DB;
 let ssl = false;
 
 if (process.env.NODE_ENV === "test") {
-  connectionString = process.env.DATABASE;
+  connectionString = process.env.TEST_DB;
 } else {
-  connectionString = process.env.DATABASE;
+  connectionString = process.env.TEST_DB;
 }
 
 const pool = new Pool({
