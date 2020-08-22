@@ -14,7 +14,7 @@ describe("Test for company endpoints", () => {
         .request(server)
         .post(`${url}/company`)
         .send(testData.addCompany());
-      expect(res.status).to.be.equal(201);
+      expect(res.status).to.be.equal(200);
     });
   });
 
@@ -56,7 +56,7 @@ describe("Test for company endpoints", () => {
 
   describe("Delete Company Test", async () => {
     it("should delete all company succesfully", async () => {
-      const res = await chai.request(server).delete(`${url}/company/1`);
+      const res = await chai.request(server).delete(`${url}/company/3`);
       expect(res.status).to.be.equal(200);
       expect(res.body).to.have.property("message");
     });

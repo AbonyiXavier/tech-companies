@@ -12,9 +12,9 @@ export default class testData {
     return {
       name: "Tech",
       location: "Abuja",
-      founder: "Mr. francis",
+      founder: "andela founder",
       employees: 88,
-      website: "www.Xavier.tech",
+      website: "www.andela.com",
     };
   }
 }

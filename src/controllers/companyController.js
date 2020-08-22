@@ -8,7 +8,7 @@ export default class companyController {
       const args = [name, location, founder, employees, website];
       const { rows } = await db.Query(Queries.createCompany, args);
       if (rows) {
-        return res.status(201).json({
+        return res.status(200).json({
           status: "success",
           message: "comapny added successfully",
           data: rows,
