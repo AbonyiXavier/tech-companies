@@ -18,7 +18,7 @@ export default class companyController {
         });
       }
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         message: error.message,
       });
     }
@@ -33,7 +33,7 @@ export default class companyController {
         data: rows,
       });
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         message: error.message,
       });
     }
@@ -49,7 +49,7 @@ export default class companyController {
         data: rows,
       });
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         message: error.message,
       });
     }
@@ -74,7 +74,7 @@ export default class companyController {
         });
       }
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         message: error.message,
       });
     }
@@ -97,7 +97,7 @@ export default class companyController {
         });
       }
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         message: error.message,
       });
     }
