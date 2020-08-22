@@ -11,7 +11,7 @@
 		"build": "npm run clean && npm run build-babel",
 		"startScript": "npm run build && node ./build/server.js",
 		"migrations": "babel-node ./src/database/migrations.js --env",
-		"test": "cross-env NODE_ENV=test npm run migration && cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha --require @babel/register src/test --timeout 10000 --exit",
+		"test": "cross-env NODE_ENV=test npm run migrations && cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha --require @babel/register src/test --timeout 10000 --exit",
 		"coverage": "nyc report --reporter=text-lcov | coveralls"
 	},
 	"repository": {
