@@ -17,7 +17,9 @@ pool.on("connect", () => {
   console.log(`Connected to Database ${process.env.PGDATABASE}`);
 });
 pool.on("error", () => {
-  console.log(`Error occured while connecting to ${process.env.PGDATABASE}`);
+  console.log(
+    `Error occured while connecting to  my ${process.env.PGDATABASE}`
+  );
 });
 
 export default pool;
