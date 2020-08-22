@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import router from "./routes/index";
+import pool from "./database/config";
+
 dotenv.config();
 
 const app = express();
@@ -27,6 +29,8 @@ app.get("*", (req, res) => {
 });
 
 const PORT = process.env.PORT || 4000;
+
+pool.connect();
 
 app.listen(PORT, () => {
   console.log(`Server listening at: http://localhost:${PORT}`);
