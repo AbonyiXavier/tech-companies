@@ -14,14 +14,14 @@ describe("Test for company endpoints", () => {
         .request(server)
         .post(`${url}/company`)
         .send(testData.addCompany());
-      expect(res.status).to.be.equal(200);
+      expect(res).to.have.status(200);
     });
   });
 
   describe("Get all Company Test", async () => {
     it("should return all companies succesfully", async () => {
       const res = await chai.request(server).get(`${url}/company`);
-      expect(res.status).to.be.equal(200);
+      expect(res).to.have.status(200);
       expect(res.body).to.have.property("message");
     });
   });
@@ -29,7 +29,7 @@ describe("Test for company endpoints", () => {
   describe("Get single Company Test", async () => {
     it("should return a company succesfully", async () => {
       const res = await chai.request(server).get(`${url}/company/1`);
-      expect(res.status).to.be.equal(200);
+      expect(res).to.have.status(200);
       expect(res.body).to.have.property("message");
     });
   });
@@ -40,7 +40,7 @@ describe("Test for company endpoints", () => {
         .request(server)
         .patch(`${url}/company/1`)
         .send(testData.updateCompany());
-      expect(res.status).to.be.equal(200);
+      expect(res).to.have.status(200);
       expect(res.body).to.have.property("message");
     });
 
@@ -57,7 +57,7 @@ describe("Test for company endpoints", () => {
   describe("Delete Company Test", async () => {
     it("should delete all company succesfully", async () => {
       const res = await chai.request(server).delete(`${url}/company/3`);
-      expect(res.status).to.be.equal(200);
+      expect(res).to.have.status(200);
       expect(res.body).to.have.property("message");
     });
 
