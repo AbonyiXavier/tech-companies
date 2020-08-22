@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import pool from './config';
+import dotenv from "dotenv";
+import pool from "./config";
 
 dotenv.config();
 async function createSchema() {
@@ -16,7 +16,6 @@ async function createSchema() {
   try {
     await client.query(dropTable);
     await client.query(createCompanyTable);
-    // await client.query(addTable);
   } catch (e) {
     console.log(e.stack);
   } finally {
