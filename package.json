@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec babel-node ./src/server.js",
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build ./src -s",
+    "build-babel": "babel  ./build ./src -s",
     "build": "npm run clean && npm run build-babel",
     "check": "npm run build && node ./build/server.js",
     "start": "cross-env NODE_ENV=production npm run check",
