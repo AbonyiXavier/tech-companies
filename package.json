@@ -4,13 +4,12 @@
   "description": "List of all tech companies",
   "main": "server.js",
   "scripts": {
-    "start": "babel-node ./build/server.js",
     "dev": "nodemon --exec babel-node ./src/server.js",
     "lint": "eslint src/  --fix",
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel ./src --out-dir ./build",
     "build": "npm run clean && npm run build-babel",
-    "startScript": "npm run build && node ./build/server.js",
+    "start": "npm run build && node ./build/server.js",
     "migrations": "babel-node ./src/database/migrations.js --env",
     "test": "cross-env NODE_ENV=test npm run migrations && cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha --require @babel/register src/test --timeout 10000 --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
@@ -36,7 +35,7 @@
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.0",
-    "@babel/node": "^7.7.0",
+    "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
     "chai": "^4.2.0",
