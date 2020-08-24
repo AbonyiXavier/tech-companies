@@ -7,7 +7,6 @@
     "dev": "nodemon --exec babel-node ./src/server.js",
     "lint": "eslint src/  --fix",
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel ./src --out-dir ./build",
     "build": "npm run clean && npm run build-babel",
     "start": "npm run build &&  node ./build/server.js",
     "migrations": "babel-node ./src/database/migrations.js --env",
