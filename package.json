@@ -4,7 +4,7 @@
   "description": "List of all tech companies",
   "main": "server.js",
   "scripts": {
-    "start": "babel-node server.js",
+    "start": "babel-node ./build/server.js",
     "dev": "nodemon --exec babel-node ./src/server.js",
     "lint": "eslint src/  --fix",
     "clean": "rm -rf build && mkdir build",
