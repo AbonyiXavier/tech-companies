@@ -2,13 +2,13 @@ import pg from "pg";
 import dotenv from "dotenv";
 dotenv.config();
 const { Pool } = pg;
-let connectionString = process.env.TEST_DB;
+let connectionString = process.env.HEROKU_URL;
 let ssl = false;
 
 if (process.env.NODE_ENV === "test") {
-  connectionString = process.env.TEST_DB;
+  connectionString = process.env.HEROKU_URL;
 } else {
-  connectionString = process.env.TEST_DB;
+  connectionString = process.env.HEROKU_URL;
 }
 
 const pool = new Pool({
