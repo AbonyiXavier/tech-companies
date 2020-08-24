@@ -1,74 +1,74 @@
 {
-	"name": "tech-companies",
-	"version": "1.0.0",
-	"description": "List of all tech companies",
-	"main": "server.js",
-	"scripts": {
-		"dev": "nodemon --exec babel-node ./src/server.js",
-		"lint": "eslint src/  --fix",
-		"clean": "rm -rf build && mkdir build",
-		"build-babel": "babel ./src --out-dir ./build",
-		"build": "npm run clean && npm run build-babel",
-		"start": "npm run build && babel-node ./build/server.js",
-		"migrations": "babel-node ./src/database/migrations.js --env",
-		"test": "cross-env NODE_ENV=test npm run migrations && cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha --require @babel/register src/test --timeout 10000 --exit",
-		"coverage": "nyc report --reporter=text-lcov | coveralls"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/AbonyiXavier/tech-companies.git"
-	},
-	"author": "AbonyiXavier",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/AbonyiXavier/tech-companies/issues"
-	},
-	"homepage": "https://github.com/AbonyiXavier/tech-companies#readme",
-	"dependencies": {
-		"@babel/polyfill": "^7.10.4",
-		"babel-plugin-istanbul": "^6.0.0",
-		"cors": "^2.8.5",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"pg": "^8.3.0"
-	},
-	"devDependencies": {
-		"@babel/cli": "^7.7.0",
-		"@babel/core": "^7.7.0",
-		"@babel/node": "^7.7.0",
-		"@babel/preset-env": "^7.7.1",
-		"@babel/register": "^7.7.0",
-		"chai": "^4.2.0",
-		"chai-http": "^4.3.0",
-		"coveralls": "^3.0.4",
-		"cross-env": "^6.0.3",
-		"eslint": "^5.16.0",
-		"eslint-config-airbnb-base": "^13.1.0",
-		"eslint-plugin-import": "^2.18.0",
-		"istanbul": "^0.4.5",
-		"mocha": "^6.1.4",
-		"mocha-lcov-reporter": "^1.3.0",
-		"nodemon": "^1.19.4",
-		"nyc": "^14.1.1"
-	},
-	"engines": {
-		"node": "10.5.0"
-	},
-	"standard": {
-		"env": [
-			"mocha"
-		]
-	},
-	"nyc": {
-		"require": [
-			"@babel/register",
-			"@babel/polyfill"
-		],
-		"reporter": [
-			"lcov",
-			"text"
-		],
-		"sourceMap": false,
-		"instrument": false
-	}
+  "name": "tech-companies",
+  "version": "1.0.0",
+  "description": "List of all tech companies",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "lint": "eslint src/  --fix",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src --out-dir ./build",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && cross-env NODE_ENV=production node ./build/server.js",
+    "migrations": "babel-node ./src/database/migrations.js --env",
+    "test": "cross-env NODE_ENV=test npm run migrations && cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha --require @babel/register src/test --timeout 10000 --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbonyiXavier/tech-companies.git"
+  },
+  "author": "AbonyiXavier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbonyiXavier/tech-companies/issues"
+  },
+  "homepage": "https://github.com/AbonyiXavier/tech-companies#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.10.4",
+    "babel-plugin-istanbul": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.0",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.0.4",
+    "cross-env": "^6.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.19.4",
+    "nyc": "^14.1.1"
+  },
+  "engines": {
+    "node": "10.5.0"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "nyc": {
+    "require": [
+      "@babel/register",
+      "@babel/polyfill"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  }
 }
