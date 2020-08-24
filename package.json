@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/AbonyiXavier/tech-companies#readme",
   "dependencies": {
+    "@babel/node": "^7.10.5",
     "@babel/polyfill": "^7.10.4",
     "babel-plugin-istanbul": "^6.0.0",
     "cors": "^2.8.5",
@@ -35,7 +36,6 @@
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.0",
-    "@babel/node": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
     "chai": "^4.2.0",
