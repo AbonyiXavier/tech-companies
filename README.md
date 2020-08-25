@@ -1,9 +1,6 @@
-<span>
 [![Build Status](https://travis-ci.org/AbonyiXavier/tech-companies.svg?branch=Develop)](https://travis-ci.org/AbonyiXavier/tech-companies)
-</span>
-<span>
+
 [![Coverage Status](https://coveralls.io/repos/github/AbonyiXavier/tech-companies/badge.svg?branch=Develop)](https://coveralls.io/github/AbonyiXavier/tech-companies?branch=Develop)
-</span>
 
 # Tech-companies Backend
 
