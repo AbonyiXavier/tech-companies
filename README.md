@@ -36,12 +36,12 @@ You must have
 - Run 'npm start' to start the application
 - In a browser address bar navigate to 'http://localhost:4000'
 
-# Using Tech-companies through its Gui locally
+## Using Tech-companies through its Gui locally
 
 - Input http://localhost:4000 in the address bar.
 - Enter appropriate information
 
-# Using Tech-companies through a restful client (hosted on heroku)
+## Using Tech-companies through a restful client (hosted on heroku)
 
 - Open any restful client application initially installed
 - Select the appropriate http method. Either GET, POST, DELETE, PUT
