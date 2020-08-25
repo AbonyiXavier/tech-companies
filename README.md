@@ -48,31 +48,33 @@ You must have
 
 # Sample format to fully test this project
 
-1. Add company: # POST: https://tech-company.herokuapp.com/api/tech/company
+1. Add company: POST: https://tech-company.herokuapp.com/api/tech/company
 
-- {
+{
+
 - "name": "Xavier-Tech",
 - "location": "Abuja",
 - "founder": "francis Xavier",
 - "employees": 200,
 - "website": "xavier-tech.com"
-- }
+  }
 
-2. Get all companies: # GET: https://tech-company.herokuapp.com/api/tech/company
+2. Get all companies: GET: https://tech-company.herokuapp.com/api/tech/company
 
-3. Get single companies: # GET: https://tech-company.herokuapp.com/api/tech/company/1
+3. Get single companies: GET: https://tech-company.herokuapp.com/api/tech/company/1
 
-4. Update company: # PATCH: https://tech-company.herokuapp.com/api/tech/company/1
+4. Update company: PATCH: https://tech-company.herokuapp.com/api/tech/company/1
 
-- {
+{
+
 - "name": "Xavier-Tech",
 - "location": "Abuja",
 - "founder": "francis Xavier",
 - "employees": 230,
 - "website": "xavier-tech.com.ng"
-  -}
+  }
 
-3. Delete single companies: # DELETE: https://tech-company.herokuapp.com/api/tech/company/1
+3. Delete single companies: DELETE: https://tech-company.herokuapp.com/api/tech/company/1
 
 # Running Tests
 
